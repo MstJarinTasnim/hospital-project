@@ -102,8 +102,48 @@ footer{background:var(--dark);color:#cbd5e1;text-align:center;padding:24px;margi
 <footer><p>Project-4: Hospital Management System | CST 6th Semester | Developed by MST. JARIN TASNIM | 2026 | CityCare HMS - Premium Version</p></footer>
 
 <script>
-let patients=JSON.parse(localStorage.getItem('hms_patients')||'[]');
-let appointments=JSON.parse(localStorage.getItem('hms_appointments')||'[]');
+
+let defaultPatients = [
+  {name:"Rahim Uddin", age:45, phone:"01711-111111", disease:"Jor / Fever", doctor:"Dr. Kamal", date:"2026-11-12"},
+  {name:"Fatema Begum", age:38, phone:"01711-111112", disease:"Diabetes", doctor:"Dr. Nasrin", date:"2026-11-13"},
+  {name:"Karim Sheikh", age:52, phone:"01711-111113", disease:"High Pressure", doctor:"Dr. Kamal", date:"2026-11-10"},
+  {name:"Nasrin Akter", age:29, phone:"01711-111114", disease:"Thanda / Cough", doctor:"Dr. Rahim", date:"2026-11-14"},
+  {name:"Abdul Malek", age:60, phone:"01711-111115", disease:"Heart Problem", doctor:"Dr. Kamal", date:"2026-11-11"},
+  {name:"Shirin Sultana", age:34, phone:"01711-111116", disease:"Gastric", doctor:"Dr. Nasrin", date:"2026-11-15"},
+  {name:"Mizanur Rahman", age:41, phone:"01711-111117", disease:"Dengue", doctor:"Dr. Rahim", date:"2026-11-16"},
+  {name:"Rina Khatun", age:27, phone:"01711-111118", disease:"Pregnancy Checkup", doctor:"Dr. Nasrin", date:"2026-11-15"},
+  {name:"Hasan Ali", age:48, phone:"01711-111119", disease:"Kidney Problem", doctor:"Dr. Kamal", date:"2026-11-09"},
+  {name:"Jannatul Ferdous", age:22, phone:"01711-111120", disease:"Migraine", doctor:"Dr. Rahim", date:"2026-11-17"},
+  {name:"Sojib Hossain", age:31, phone:"01711-111121", disease:"Typhoid", doctor:"Dr. Nasrin", date:"2026-11-12"},
+  {name:"Marium Akter", age:55, phone:"01711-111122", disease:"Arthritis", doctor:"Dr. Kamal", date:"2026-11-10"},
+  {name:"Belal Hossain", age:39, phone:"01711-111123", disease:"Asthma", doctor:"Dr. Rahim", date:"2026-11-14"},
+  {name:"Sharmin Akter", age:26, phone:"01711-111124", disease:"Anemia", doctor:"Dr. Nasrin", date:"2026-11-16"},
+  {name:"Alamin Khan", age:33, phone:"01711-111125", disease:"Jaundice", doctor:"Dr. Kamal", date:"2026-11-13"},
+  {name:"Kulsum Begum", age:65, phone:"01711-111126", disease:"Diabetes", doctor:"Dr. Nasrin", date:"2026-11-11"},
+  {name:"Rakib Hasan", age:24, phone:"01711-111127", disease:"Accident / Injury", doctor:"Dr. Rahim", date:"2026-11-18"},
+  {name:"Taslima Begum", age:42, phone:"01711-111128", disease:"High Pressure", doctor:"Dr. Kamal", date:"2026-11-12"},
+  {name:"Faruk Ahmed", age:50, phone:"01711-111129", disease:"Liver Problem", doctor:"Dr. Kamal", date:"2026-11-09"},
+  {name:"Nusrat Jahan", age:19, phone:"01711-111130", disease:"Fever", doctor:"Dr. Nasrin", date:"2026-11-17"},
+  {name:"Imran Hossain", age:36, phone:"01711-111131", disease:"Back Pain", doctor:"Dr. Rahim", date:"2026-11-15"},
+  {name:"Ayesha Siddika", age:47, phone:"01711-111132", disease:"Thyroid", doctor:"Dr. Nasrin", date:"2026-11-14"},
+  {name:"Shakil Ahmed", age:28, phone:"01711-111133", disease:"Dengue", doctor:"Dr. Kamal", date:"2026-11-16"},
+  {name:"Roksana Begum", age:58, phone:"01711-111134", disease:"Heart Problem", doctor:"Dr. Kamal", date:"2026-11-10"},
+  {name:"Tanvir Ahmed", age:32, phone:"01711-111135", disease:"Gastric", doctor:"Dr. Rahim", date:"2026-11-18"},
+  {name:"Mim Akter", age:21, phone:"01711-111136", disease:"Skin Problem", doctor:"Dr. Nasrin", date:"2026-11-17"},
+  {name:"Jamal Uddin", age:62, phone:"01711-111137", disease:"Kidney Problem", doctor:"Dr. Kamal", date:"2026-11-08"},
+  {name:"Sumi Akter", age:30, phone:"01711-111138", disease:"Pregnancy Checkup", doctor:"Dr. Nasrin", date:"2026-11-18"},
+  {name:"Arif Hossain", age:44, phone:"01711-111139", disease:"Diabetes", doctor:"Dr. Rahim", date:"2026-11-13"},
+  {name:"Hafiza Khatun", age:70, phone:"01711-111140", disease:"Arthritis", doctor:"Dr. Kamal", date:"2026-11-09"},
+  {name:"Mehedi Hasan", age:25, phone:"01711-111141", disease:"Typhoid", doctor:"Dr. Nasrin", date:"2026-11-15"},
+  {name:"Sabina Yasmin", age:37, phone:"01711-111142", disease:"Migraine", doctor:"Dr. Rahim", date:"2026-11-16"},
+  {name:"Nayeem Islam", age:40, phone:"01711-111143", disease:"Asthma", doctor:"Dr. Kamal", date:"2026-11-14"},
+  {name:"Popy Akter", age:23, phone:"01711-111144", disease:"Anemia", doctor:"Dr. Nasrin", date:"2026-11-17"},
+  {name:"Salam Mia", age:68, phone:"01711-111145", disease:"High Pressure", doctor:"Dr. Kamal", date:"2026-11-11"},
+];
+let patients = JSON.parse(localStorage.getItem('hms_patients')||'[]');
+if(patients.length===0){ patients = defaultPatients; localStorage.setItem('hms_patients', JSON.stringify(patients)); }
+let appointments = JSON.parse(localStorage.getItem('hms_appointments')||'[]');
+if(appointments.length===0){ appointments = patients.map(p=>({name:p.name, doctor:p.doctor, date:p.date})); localStorage.setItem('hms_appointments', JSON.stringify(appointments)); }
 function showPage(page){
 document.querySelectorAll('[id^="page-"]').forEach(el=>el.classList.add('hidden'));
 document.getElementById('page-'+page).classList.remove('hidden');
