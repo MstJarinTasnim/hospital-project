@@ -140,5 +140,92 @@ document.getElementById('recentAppointments').innerHTML=appointments.slice(-3).r
 render();
 document.getElementById('pDate').valueAsDate=new Date();
 </script>
+<!-- DOCTOR SECTION -->
+<section style="padding:40px 20px; background:#f0f8ff; text-align:center; font-family: sans-serif;">
+  <h2 style="color:#0a6ebd; font-size:32px;">Our Doctors</h2>
+  <p style="color:#555;">Oviggho o jotnoshil doctor ra apnar sebay</p>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:25px;">
+
+    <!-- Doctor 1 -->
+    <div style="background:white; width:250px; border-radius:15px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+      <img src=https://randomuser.me/api/portraits/men/32.jpg style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="margin:10px 0 5px;">Dr. Rahim Uddin</h3>
+      <p style="color:#0a6ebd; margin:0;">Medicine Specialist</p>
+      <p style="color:#555; font-size:14px;">MBBS, FCPS | 10 bochor oviggota</p>
+      <p style="font-size:14px;">Somoy: Sok 9ta - Dupur 2ta</p>
+      <button style="background:#0a6ebd; color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer;">Appointment</button>
+    </div>
+
+    <!-- Doctor 2 -->
+    <div style="background:white; width:250px; border-radius:15px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+      <img src=https://randomuser.me/api/portraits/women/44.jpg style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="margin:10px 0 5px;">Dr. Nasrin Akter</h3>
+      <p style="color:#0a6ebd; margin:0;">Gynae Specialist</p>
+      <p style="color:#555; font-size:14px;">MBBS, MS | 8 bochor oviggota</p>
+      <p style="font-size:14px;">Somoy: Bikel 4ta - Rat 8ta</p>
+      <button style="background:#0a6ebd; color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer;">Appointment</button>
+    </div>
+
+    <!-- Doctor 3 -->
+    <div style="background:white; width:250px; border-radius:15px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+      <img src=https://randomuser.me/api/portraits/men/75.jpg style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="margin:10px 0 5px;">Dr. Tanvir Ahmed</h3>
+      <p style="color:#0a6ebd; margin:0;">Child Specialist</p>
+      <p style="color:#555; font-size:14px;">MBBS, DCH | 6 bochor oviggota</p>
+      <p style="font-size:14px;">Somoy: Sok 10ta - Dupur 1ta</p>
+      <button style="background:#0a6ebd; color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer;">Appointment</button>
+    </div>
+
+  </div>
+</section>
+<script>
+// Demo patient - jodi khali thake tahole auto asbe
+if(!localStorage.getItem('patients')){
+  localStorage.setItem('patients', JSON.stringify([
+    {name:"Rahim Uddin", age:45, disease:"Fever", doctor:"Dr. Rahim Uddin", date:"2026-11-20", status:"Admitted"},
+    {name:"Nasrin Akter", age:32, disease:"Diabetes", doctor:"Dr. Nasrin Akter", date:"2026-11-19", status:"Admitted"},
+    {name:"Tanvir Ahmed", age:28, disease:"Typhoid", doctor:"Dr. Tanvir Ahmed", date:"2026-11-18", status:"Discharged"},
+    {name:"Jarin Tasnim", age:22, disease:"Migraine", doctor:"Dr. Rahim Uddin", date:"2026-11-20", status:"Admitted"},
+    {name:"Karim Sheikh", age:60, disease:"Heart Problem", doctor:"Dr. Tanvir Ahmed", date:"2026-11-17", status:"Admitted"}
+  ]));
+  location.reload();
+}
+</script>
+<!-- TEST & EQUIPMENT SECTION -->
+<div style="padding:20px;">
+  <h2>🧪 Amader Test Somuho</h2>
+  <div style="display:flex; gap:15px; flex-wrap:wrap;">
+    <div onclick="alert('Blood Test - 300 Taka, Report: 2 Ghonta')" style="border:1px solid #ddd; padding:15px; border-radius:12px; cursor:pointer; width:180px;">
+      <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400" style="width:100%; border-radius:10px;">
+      <h3>Blood Test</h3><p>300 Taka | 2 Ghonta</p>
+    </div>
+    <div onclick="alert('X-Ray - 800 Taka, Report: 1 Ghonta')" style="border:1px solid #ddd; padding:15px; border-radius:12px; cursor:pointer; width:180px;">
+      <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400" style="width:100%; border-radius:10px;">
+      <h3>X-Ray</h3><p>800 Taka | 1 Ghonta</p>
+    </div>
+    <div onclick="alert('ECG - 500 Taka, Report: 30 Min')" style="border:1px solid #ddd; padding:15px; border-radius:12px; cursor:pointer; width:180px;">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400" style="width:100%; border-radius:10px;">
+      <h3>ECG</h3><p>500 Taka | 30 Min</p>
+    </div>
+    <div onclick="alert('Ultrasound - 1200 Taka, Report: 1 Ghonta')" style="border:1px solid #ddd; padding:15px; border-radius:12px; cursor:pointer; width:180px;">
+      <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400" style="width:100%; border-radius:10px;">
+      <h3>Ultrasound</h3><p>1200 Taka | 1 Ghonta</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:30px;">🏥 Amader Jontro-pati</h2>
+  <div style="display:flex; gap:15px; flex-wrap:wrap;">
+    <div style="border:1px solid #ddd; padding:15px; border-radius:12px; width:180px;">
+      <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=400" style="width:100%; border-radius:10px;">
+      <h3>Oxygen Cylinder</h3><p>24 Ghonta Available</p>
+    </div>
+    <div style="border:1px solid #ddd; padding:15px; border-radius:12px; width:180px;">
+      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400" style="width:100%; border-radius:10px;">
+      <h3>Digital BP Machine</h3><p>Free Checkup</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
