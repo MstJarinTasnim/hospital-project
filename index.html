@@ -302,7 +302,7 @@ footer{background:var(--dark);color:#cbd5e1;text-align:center;padding:24px;margi
 
 <!-- Supercare Hospital - Our Services Section End -->
 <div style="padding:15px;">
-  <h2 style="text-align:center;">🏥 Amader Facility</h2>
+  <h2 style="text-align:center;">Our Facility</h2>
   <p style="text-align:center;">SuperCare Hospital -Bogura,Rajshahi</p>
 
   <!-- 1. Emergency -->
@@ -360,6 +360,91 @@ footer{background:var(--dark);color:#cbd5e1;text-align:center;padding:24px;margi
   </div>
 
 </div>
+<!-- SuperCare Hospital - Job Circular Section -->
+
+<div style="padding:20px; background:#fff3e0; border-radius:12px; margin:20px 0;">
+  <h2 style="text-align:center; color:#e65100;">📢 Job Circular - Join Our Team</h2>
+  <p style="text-align:center;">SuperCare Hospital e niyog cholche. Niche theke abedon korun.</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:15px;">
+
+    <!-- Nurse -->
+    <div style="background:white; padding:15px; border-radius:8px; border-left:5px solid #e65100;">
+      <b style="font-size:18px;">Staff Nurse</b><br>
+      <small>👩‍⚕️ Pod: 5 Jon | Salary: Alochona Sapekkhe</small><br>
+      <small>Joggotta: Diploma in Nursing / BSc Nursing</small><br>
+      <small>📍 Location: SuperCare Hospital</small><br><br>
+      <a href="#apply-form" style="background:#e65100; color:white; padding:8px 15px; border-radius:20px; text-decoration:none; font-size:14px;">Apply Now</a>
+    </div>
+
+    <!-- Doctor -->
+    <div style="background:white; padding:15px; border-radius:8px; border-left:5px solid #0a5c9e;">
+      <b style="font-size:18px;">Medical Officer / Doctor</b><br>
+      <small>🩺 Pod: 2 Jon | Salary: Alochona Sapekkhe</small><br>
+      <small>Joggotta: MBBS + BMDC Registration</small><br>
+      <small>📍 Location: SuperCare Hospital</small><br><br>
+      <a href="#apply-form" style="background:#0a5c9e; color:white; padding:8px 15px; border-radius:20px; text-decoration:none; font-size:14px;">Apply Now</a>
+    </div>
+
+    <!-- Ward Boy -->
+    <div style="background:white; padding:15px; border-radius:8px; border-left:5px solid #2e7d32;">
+      <b style="font-size:18px;">Ward Boy / Girl</b><br>
+      <small>🧑‍⚕️ Pod: 4 Jon | Salary: 10,000 - 12,000 Taka</small><br>
+      <small>Joggotta: SSC Pass, Oviggota thakle valo</small><br>
+      <small>📍 Location: SuperCare Hospital</small><br><br>
+      <a href="#apply-form" style="background:#2e7d32; color:white; padding:8px 15px; border-radius:20px; text-decoration:none; font-size:14px;">Apply Now</a>
+    </div>
+
+    <!-- Receptionist -->
+    <div style="background:white; padding:15px; border-radius:8px; border-left:5px solid #8e24aa;">
+      <b style="font-size:18px;">Receptionist</b><br>
+      <small>💁 Pod: 1 Jon | Salary: Alochona Sapekkhe</small><br>
+      <small>Joggotta: HSC Pass + Computer Jana</small><br>
+      <small>📍 Location: SuperCare Hospital</small><br><br>
+      <a href="#apply-form" style="background:#8e24aa; color:white; padding:8px 15px; border-radius:20px; text-decoration:none; font-size:14px;">Apply Now</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Apply Form -->
+<div id="apply-form" style="padding:20px; background:#e3f2fd; border-radius:12px; margin:20px 0;">
+  <h2 style="text-align:center;">📝 Chakrir Jonno Abedon Korun</h2>
+  <form onsubmit="sendToWhatsApp(); return false;" style="max-width:500px; margin:auto; display:grid; gap:10px;">
+    
+    <label>Apnar Nam *</label>
+    <input id="app-name" type="text" placeholder="Ex: Rahim Uddin" required style="padding:10px; border-radius:8px; border:1px solid #ccc;">
+    
+    <label>Mobile Number *</label>
+    <input id="app-phone" type="tel" placeholder="01XXXXXXXXX" required style="padding:10px; border-radius:8px; border:1px solid #ccc;">
+    
+    <label>Kon Post e Abedon Korben? *</label>
+    <select id="app-post" style="padding:10px; border-radius:8px; border:1px solid #ccc;">
+      <option>Staff Nurse</option>
+      <option>Medical Officer / Doctor</option>
+      <option>Ward Boy / Girl</option>
+      <option>Receptionist</option>
+    </select>
+
+    <label>Oviggota / Education</label>
+    <textarea id="app-msg" placeholder="Apnar education ar oviggota likhun..." style="padding:10px; border-radius:8px; border:1px solid #ccc; height:80px;"></textarea>
+    
+    <button type="submit" style="background:#25D366; color:white; padding:12px; border:none; border-radius:20px; font-size:16px; font-weight:bold;">WhatsApp e Abedon Pathan</button>
+    <p style="text-align:center; font-size:13px; color:#555;">Button e click korle abedon ti sorasori hospital er WhatsApp e chole jabe.</p>
+  </form>
+</div>
+
+<script>
+function sendToWhatsApp(){
+  var name = document.getElementById('app-name').value;
+  var phone = document.getElementById('app-phone').value;
+  var post = document.getElementById('app-post').value;
+  var msg = document.getElementById('app-msg').value;
+  var text = "Assalamualaikum, Ami Chakrir Jonno Abedon Korte Chai.%0A%0A" + "Nam: " + name + "%0A" + "Phone: " + phone + "%0A" + "Post: " + post + "%0A" + "Education/Oviggota: " + msg;
+  // Ekhane hospital er number bosabi - 8801XXXXXXXXX
+  window.open("https://wa.me/8801536122546?text=" + text, "_blank");
+}
+</script>
 <script>
 
 let defaultPatients = [
